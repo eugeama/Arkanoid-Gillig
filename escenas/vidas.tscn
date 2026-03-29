@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://csaba7yrcfut1"]
+
+[ext_resource type="Texture2D" uid="uid://ckj00x216boov" path="res://sprites/a27a39b95d0d36385adac1e3b9ba2504-removebg-preview.png" id="1_p3shc"]
+
+[node name="Vidas" type="Panel" unique_id=1819370872]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(64, 29.891)
+offset_left = 7.0
+offset_top = 15.0
+offset_right = 71.0
+offset_bottom = 44.891296
+scale = Vector2(1, 1.8400004)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1601290880]
+position = Vector2(0, -2.173913)
+scale = Vector2(0.12700002, 0.06958063)
+texture = ExtResource("1_p3shc")
+centered = false

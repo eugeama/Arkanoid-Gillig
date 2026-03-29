@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://jirxcrwrq053"]
+
+[ext_resource type="Script" uid="uid://dycpqsp53skap" path="res://scripts/menu.gd" id="1_nh5s5"]
+[ext_resource type="FontFile" uid="uid://bfki1daihirnf" path="res://Showpop.ttf" id="2_8ohgq"]
+[ext_resource type="Texture2D" uid="uid://cw1ch7aw6l8jt" path="res://sprites/9d09973db89b62caf965ad26a5ea05c3.jpg" id="2_w8yqu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_deuh0"]
+texture = ExtResource("2_w8yqu")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pve50"]
+bg_color = Color(1, 1, 1, 1)
+border_color = Color(0.84208393, 0.78767884, 0.765771, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 5
+
+[node name="Control" type="Control" unique_id=894839813]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nh5s5")
+
+[node name="Panel" type="Panel" parent="." unique_id=1856449060]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_deuh0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=13130605]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.5
+offset_top = -72.83331
+offset_right = 244.5
+offset_bottom = 72.83331
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.2)
+theme_override_constants/separation = 20
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=661733019]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.99215686, 0.81960785, 0.88235295, 1)
+theme_override_constants/h_separation = 20
+theme_override_constants/icon_max_width = 4
+theme_override_fonts/font = ExtResource("2_8ohgq")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_pve50")
+text = "Empezar"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=963710744]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.99215686, 0.81960785, 0.88235295, 1)
+theme_override_constants/h_separation = 20
+theme_override_constants/icon_max_width = 4
+theme_override_fonts/font = ExtResource("2_8ohgq")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_pve50")
+text = "Salir"
+
+[node name="Label" type="Label" parent="." unique_id=2080909736]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -180.5
+offset_right = 280.0
+offset_bottom = -115.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.99324256, 0.82019174, 0.88307184, 1)
+theme_override_constants/shadow_offset_x = 17
+theme_override_constants/shadow_offset_y = 17
+theme_override_constants/shadow_outline_size = 17
+theme_override_fonts/font = ExtResource("2_8ohgq")
+theme_override_font_sizes/font_size = 54
+text = "Break my Love !"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_elegir_nivel_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_salir_pressed"]

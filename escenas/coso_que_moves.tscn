@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://b6sh6ias25nee"]
+
+[ext_resource type="Texture2D" uid="uid://cv3yjo7cropoy" path="res://sprites/8913d6f529721e554ff2f45c1a5c7eed-removebg-preview (1).png" id="1_pk554"]
+
+[sub_resource type="GDScript" id="GDScript_0orpf"]
+script/source = "extends CharacterBody2D
+const moverse = 1000.0
+
+func _physics_process(delta: float) -> void:
+	var direction := Input.get_axis(\"ui_left\", \"ui_right\")
+	if direction:
+		velocity.x = direction * moverse
+	else:
+		velocity.x = move_toward(velocity.x, 0, moverse)
+	move_and_slide()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0orpf"]
+size = Vector2(97.8439, 91.150986)
+
+[node name="coso que moves" type="CharacterBody2D" unique_id=90638456]
+scale = Vector2(-1.664757, 0.21417543)
+motion_mode = 1
+script = SubResource("GDScript_0orpf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=886673758]
+position = Vector2(1.9658545, -40.74827)
+scale = Vector2(0.2855104, 1.3281546)
+texture = ExtResource("1_pk554")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=278185419]
+position = Vector2(-0.3003447, -33.860256)
+scale = Vector2(1.2094322, 1.4084369)
+shape = SubResource("RectangleShape2D_0orpf")

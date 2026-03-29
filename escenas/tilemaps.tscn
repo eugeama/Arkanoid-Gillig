@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b4e0lh20s5j2i"]
+
+[ext_resource type="PackedScene" uid="uid://bsuyhi6x8eep8" path="res://escenas/bloque.tscn" id="1_kffbi"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_qphja"]
+scenes/1/scene = ExtResource("1_kffbi")
+
+[sub_resource type="TileSet" id="TileSet_topbw"]
+tile_size = Vector2i(32, 33)
+physics_layer_0/collision_layer = 1
+sources/7 = SubResource("TileSetScenesCollectionSource_qphja")
+
+[node name="Node2D" type="TileMapLayer" unique_id=734866466]
+tile_set = SubResource("TileSet_topbw")

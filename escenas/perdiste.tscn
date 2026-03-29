@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://drp1kr6yma6vf"]
+
+[ext_resource type="Script" uid="uid://csn77epy04kad" path="res://scripts/perdiste.gd" id="1_1ekmo"]
+[ext_resource type="Texture2D" uid="uid://cw1ch7aw6l8jt" path="res://sprites/9d09973db89b62caf965ad26a5ea05c3.jpg" id="2_t0qqe"]
+[ext_resource type="FontFile" uid="uid://bfki1daihirnf" path="res://Showpop.ttf" id="3_0e8hl"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t0qqe"]
+texture = ExtResource("2_t0qqe")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0e8hl"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 5
+
+[node name="Perdiste" type="Control" unique_id=1644859406]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1ekmo")
+
+[node name="Panel" type="Panel" parent="." unique_id=2147179358]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 650.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_t0qqe")
+
+[node name="Button" type="Button" parent="." unique_id=1275210867]
+layout_mode = 0
+offset_left = 463.0
+offset_top = 346.0
+offset_right = 770.0
+offset_bottom = 422.0
+theme_override_colors/font_color = Color(0.99215686, 0.81960785, 0.88235295, 1)
+theme_override_fonts/font = ExtResource("3_0e8hl")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_0e8hl")
+text = "Volver al inicio"
+
+[node name="Label" type="Label" parent="." unique_id=1563463016]
+layout_mode = 0
+offset_left = 441.0
+offset_top = 195.0
+offset_right = 810.0
+offset_bottom = 260.0
+theme_override_colors/font_color = Color(0.99215686, 0.81960785, 0.88235295, 1)
+theme_override_fonts/font = ExtResource("3_0e8hl")
+theme_override_font_sizes/font_size = 54
+text = "Perdiste ! :("
+
+[connection signal="pressed" from="Button" to="." method="_on_perdiste_pressed"]

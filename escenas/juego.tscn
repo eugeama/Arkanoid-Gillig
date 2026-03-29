@@ -1,0 +1,84 @@
+[gd_scene format=4 uid="uid://car5eddoynq6o"]
+
+[ext_resource type="Script" uid="uid://cbexu4apmq5c6" path="res://scripts/juego.gd" id="1_mf1lf"]
+[ext_resource type="PackedScene" uid="uid://b6sh6ias25nee" path="res://escenas/coso_que_moves.tscn" id="1_v0a8y"]
+[ext_resource type="PackedScene" uid="uid://dsb7dtmschld3" path="res://escenas/pelota.tscn" id="2_mf1lf"]
+[ext_resource type="Texture2D" uid="uid://dauk2kfwpgp1e" path="res://sprites/55df6b8c1f235b44b1b07a7f0d644aca.jpg" id="2_uf0fd"]
+[ext_resource type="PackedScene" uid="uid://b4e0lh20s5j2i" path="res://escenas/tilemaps.tscn" id="4_t4q8c"]
+[ext_resource type="Script" uid="uid://5u37ritoxu7n" path="res://scripts/zona_muerte.gd" id="5_qnwci"]
+[ext_resource type="PackedScene" uid="uid://dg80p610ncqep" path="res://escenas/barra_vida.tscn" id="6_qk6os"]
+[ext_resource type="Script" uid="uid://6ix4njky46u6" path="res://scripts/barra_vida.gd" id="7_n5myf"]
+[ext_resource type="PackedScene" uid="uid://drp1kr6yma6vf" path="res://escenas/perdiste.tscn" id="8_n5myf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s1l0b"]
+texture = ExtResource("2_uf0fd")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n74ki"]
+size = Vector2(8, 658)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ipdbw"]
+size = Vector2(1159, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbmtn"]
+size = Vector2(2.2684479, 609.7207)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t4q8c"]
+size = Vector2(1155, 15)
+
+[node name="juego" type="Node2D" unique_id=695480138]
+script = ExtResource("1_mf1lf")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=515910721]
+position = Vector2(572, 324)
+
+[node name="Panel" type="Panel" parent="." unique_id=1760043397]
+offset_left = -2.0
+offset_top = -7.0
+offset_right = 1074.9948
+offset_bottom = 34.01716
+scale = Vector2(1.0761427, 16.115208)
+theme_override_styles/panel = SubResource("StyleBoxTexture_s1l0b")
+
+[node name="coso que moves" parent="." unique_id=90638456 instance=ExtResource("1_v0a8y")]
+position = Vector2(580, 559)
+
+[node name="CharacterBody2D" parent="." unique_id=1083716565 instance=ExtResource("2_mf1lf")]
+position = Vector2(713, 464)
+
+[node name="Node2D" parent="." unique_id=734866466 instance=ExtResource("4_t4q8c")]
+position = Vector2(0, -37)
+scale = Vector2(1, 0.7600002)
+tile_map_data = PackedByteArray("AAAEAAUABwAAAAAAAQAHAAUABwAAAAAAAQAKAAUABwAAAAAAAQANAAUABwAAAAAAAQAQAAUABwAAAAAAAQATAAUABwAAAAAAAQAWAAUABwAAAAAAAQAZAAUABwAAAAAAAQAcAAUABwAAAAAAAQAfAAUABwAAAAAAAQABAAUABwAAAAAAAQAiAAUABwAAAAAAAQAiAAgABwAAAAAAAQAfAAgABwAAAAAAAQAcAAgABwAAAAAAAQAZAAgABwAAAAAAAQAWAAgABwAAAAAAAQATAAgABwAAAAAAAQAQAAgABwAAAAAAAQANAAgABwAAAAAAAQAKAAgABwAAAAAAAQAHAAgABwAAAAAAAQAEAAgABwAAAAAAAQABAAgABwAAAAAAAQABAAsABwAAAAAAAQAEAAsABwAAAAAAAQAHAAsABwAAAAAAAQAKAAsABwAAAAAAAQANAAsABwAAAAAAAQAQAAsABwAAAAAAAQATAAsABwAAAAAAAQAWAAsABwAAAAAAAQAZAAsABwAAAAAAAQAcAAsABwAAAAAAAQAfAAsABwAAAAAAAQAiAAsABwAAAAAAAQAiAAIABwAAAAAAAQAfAAIABwAAAAAAAQAcAAIABwAAAAAAAQAZAAIABwAAAAAAAQAWAAIABwAAAAAAAQATAAIABwAAAAAAAQAQAAIABwAAAAAAAQANAAIABwAAAAAAAQAKAAIABwAAAAAAAQAHAAIABwAAAAAAAQAEAAIABwAAAAAAAQABAAIABwAAAAAAAQA=")
+
+[node name="pared" type="StaticBody2D" parent="." unique_id=581296785]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pared" unique_id=890946588]
+position = Vector2(-6, 319)
+shape = SubResource("RectangleShape2D_n74ki")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="pared" unique_id=934854384]
+position = Vector2(569.5, -4.5)
+shape = SubResource("RectangleShape2D_ipdbw")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="pared" unique_id=533453468]
+position = Vector2(1151.1858, 320.25058)
+rotation = -3.1415925
+scale = Vector2(3.3628488, -1.0783608)
+shape = SubResource("RectangleShape2D_xbmtn")
+
+[node name="Area2D" type="Area2D" parent="pared" unique_id=1553286912]
+script = ExtResource("5_qnwci")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pared/Area2D" unique_id=1544195214]
+position = Vector2(577.5, 652.5)
+shape = SubResource("RectangleShape2D_t4q8c")
+
+[node name="BarraVida" parent="." unique_id=514893621 instance=ExtResource("6_qk6os")]
+offset_left = 5.0
+offset_top = 610.0
+offset_right = 207.0
+offset_bottom = 646.0
+script = ExtResource("7_n5myf")
+
+[node name="Perdiste" parent="." unique_id=1644859406 instance=ExtResource("8_n5myf")]
+visible = false

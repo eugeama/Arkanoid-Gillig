@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dg80p610ncqep"]
+
+[ext_resource type="PackedScene" uid="uid://csaba7yrcfut1" path="res://escenas/vidas.tscn" id="1_8aly0"]
+
+[node name="BarraVida" type="HBoxContainer" unique_id=514893621]
+offset_right = 200.0
+offset_bottom = 36.0
+theme_override_constants/separation = 5
+
+[node name="Vidas" parent="." unique_id=1819370872 instance=ExtResource("1_8aly0")]
+layout_mode = 2
+
+[node name="Vidas2" parent="." unique_id=1548114575 instance=ExtResource("1_8aly0")]
+layout_mode = 2
+
+[node name="Vidas3" parent="." unique_id=830110280 instance=ExtResource("1_8aly0")]
+layout_mode = 2

@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://hlsa1mxdqqiu"]
+
+[ext_resource type="Texture2D" uid="uid://cw1ch7aw6l8jt" path="res://sprites/9d09973db89b62caf965ad26a5ea05c3.jpg" id="2_twgdn"]
+[ext_resource type="FontFile" uid="uid://bfki1daihirnf" path="res://Showpop.ttf" id="3_g0qwb"]
+
+[sub_resource type="GDScript" id="GDScript_rrxmj"]
+script/source = "extends Control
+
+func _ready() -> void:
+	pass
+
+func _process(delta: float) -> void:
+	pass
+
+func _on_ganaste_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://escenas/pantalla_inicio.tscn\")
+"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n4hqw"]
+texture = ExtResource("2_twgdn")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_swlnw"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 5
+
+[node name="Control" type="Control" unique_id=1473755795]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_rrxmj")
+
+[node name="Panel" type="Panel" parent="." unique_id=1433849066]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 650.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_n4hqw")
+
+[node name="Button" type="Button" parent="." unique_id=780663947]
+layout_mode = 0
+offset_left = 463.0
+offset_top = 346.0
+offset_right = 770.0
+offset_bottom = 422.0
+theme_override_colors/font_color = Color(0.99215686, 0.81960785, 0.88235295, 1)
+theme_override_fonts/font = ExtResource("3_g0qwb")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_swlnw")
+text = "Volver al inicio"
+
+[node name="Label" type="Label" parent="." unique_id=1988654484]
+layout_mode = 0
+offset_left = 441.0
+offset_top = 195.0
+offset_right = 810.0
+offset_bottom = 260.0
+theme_override_colors/font_color = Color(0.99215686, 0.81960785, 0.88235295, 1)
+theme_override_fonts/font = ExtResource("3_g0qwb")
+theme_override_font_sizes/font_size = 54
+text = "Ganaste !! <>"
+
+[connection signal="pressed" from="Button" to="." method="_on_ganaste_pressed"]
