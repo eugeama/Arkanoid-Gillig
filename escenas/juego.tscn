@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://6ix4njky46u6" path="res://scripts/barra_vida.gd" id="7_n5myf"]
 [ext_resource type="PackedScene" uid="uid://drp1kr6yma6vf" path="res://escenas/perdiste.tscn" id="8_n5myf"]
 [ext_resource type="AudioStream" uid="uid://bvx1ivewp5tbl" path="res://sprites/[no copyright music]  coffee time  cute vlog music.mp3" id="10_s1l0b"]
+[ext_resource type="FontFile" uid="uid://bfki1daihirnf" path="res://Showpop.ttf" id="11_qfdc2"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s1l0b"]
 texture = ExtResource("2_uf0fd")
@@ -87,3 +88,12 @@ visible = false
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="." unique_id=769203612]
 stream = ExtResource("10_s1l0b")
 autoplay = true
+
+[node name="Puntos" type="Label" parent="." unique_id=1003044695]
+offset_left = 956.0
+offset_top = 606.0
+offset_right = 1130.0
+offset_bottom = 636.0
+theme_override_colors/font_color = Color(0.99215686, 0.81960785, 0.88235295, 1)
+theme_override_fonts/font = ExtResource("11_qfdc2")
+theme_override_font_sizes/font_size = 25
