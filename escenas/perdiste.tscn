@@ -15,6 +15,20 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 shadow_size = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ekmo"]
+bg_color = Color(0.99215686, 0.81960785, 0.88235295, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t0qqe"]
+bg_color = Color(0.99215686, 0.81960785, 0.88235295, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
 [node name="Perdiste" type="Control" unique_id=1644859406]
 layout_mode = 3
 anchors_preset = 15
@@ -37,9 +51,15 @@ offset_top = 346.0
 offset_right = 770.0
 offset_bottom = 422.0
 theme_override_colors/font_color = Color(0.99215686, 0.81960785, 0.88235295, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_0e8hl")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_0e8hl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1ekmo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t0qqe")
 text = "Volver al inicio"
 
 [node name="Label" type="Label" parent="." unique_id=1563463016]

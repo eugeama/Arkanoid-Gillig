@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dycpqsp53skap" path="res://scripts/menu.gd" id="1_nh5s5"]
 [ext_resource type="FontFile" uid="uid://bfki1daihirnf" path="res://Showpop.ttf" id="2_8ohgq"]
 [ext_resource type="Texture2D" uid="uid://cw1ch7aw6l8jt" path="res://sprites/9d09973db89b62caf965ad26a5ea05c3.jpg" id="2_w8yqu"]
+[ext_resource type="AudioStream" uid="uid://bvx1ivewp5tbl" path="res://sprites/[no copyright music]  coffee time  cute vlog music.mp3" id="4_w8yqu"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_deuh0"]
 texture = ExtResource("2_w8yqu")
@@ -15,6 +16,34 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ohgq"]
+bg_color = Color(0.99215686, 0.81960785, 0.88235295, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w8yqu"]
+bg_color = Color(0.99215686, 0.81960785, 0.88235295, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l867c"]
+bg_color = Color(0.99215686, 0.81960785, 0.88235295, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ki3ch"]
+bg_color = Color(0.99215686, 0.81960785, 0.88235295, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="Control" type="Control" unique_id=894839813]
 layout_mode = 3
@@ -41,9 +70,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -130.5
-offset_top = -72.83331
-offset_right = 244.5
+offset_left = -139.5
+offset_top = -72.8333
+offset_right = 235.5
 offset_bottom = 72.83331
 grow_horizontal = 2
 grow_vertical = 2
@@ -54,22 +83,34 @@ theme_override_constants/separation = 20
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.99215686, 0.81960785, 0.88235295, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_constants/h_separation = 20
 theme_override_constants/icon_max_width = 4
 theme_override_fonts/font = ExtResource("2_8ohgq")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_pve50")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8ohgq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w8yqu")
 text = "Empezar"
 
 [node name="Button2" type="Button" parent="VBoxContainer" unique_id=963710744]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.99215686, 0.81960785, 0.88235295, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_constants/h_separation = 20
 theme_override_constants/icon_max_width = 4
 theme_override_fonts/font = ExtResource("2_8ohgq")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_pve50")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l867c")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ki3ch")
 text = "Salir"
 
 [node name="Label" type="Label" parent="." unique_id=2080909736]
@@ -91,7 +132,21 @@ theme_override_constants/shadow_offset_y = 17
 theme_override_constants/shadow_outline_size = 17
 theme_override_fonts/font = ExtResource("2_8ohgq")
 theme_override_font_sizes/font_size = 54
-text = "Break my Love !"
+text = "⋆˚ʚɞ Break my Love ! ₍^. .^₎⟆"
+
+[node name="Label2" type="Label" parent="." unique_id=359638920]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 203.0
+offset_right = 730.0
+offset_bottom = 231.0
+theme_override_colors/font_color = Color(0.99215686, 0.81960785, 0.88235295, 1)
+theme_override_font_sizes/font_size = 20
+text = " ִֶָ۶ৎ˖ִ ˚ Un juego chill <3"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=81259488]
+stream = ExtResource("4_w8yqu")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_elegir_nivel_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_salir_pressed"]

@@ -2,25 +2,18 @@ extends Node2D
 
 @onready var pelota = $CharacterBody2D
 @onready var barra_vida = $BarraVida
-@onready var pantalla_perdiste = $Perdiste
 
 var bloques_restantes := 0
 var juego_iniciado := false
 
 func _ready() -> void:
 	add_to_group("juego") 
-	pantalla_perdiste.hide()
 	pelota.vida_cambiada.connect(_on_vida_cambiada)
 	contar_bloques()
 
 func contar_bloques() -> void:
-	var intentos := 0
-	while get_tree().get_nodes_in_group("bloques").size() == 0 and intentos < 10:
-		await get_tree().process_frame
-		intentos += 1
-
+	await get_tree().process_frame
 	bloques_restantes = get_tree().get_nodes_in_group("bloques").size()
-	print("Bloques contados: ", bloques_restantes)
 	juego_iniciado = true
 
 func bloque_destruido() -> void:
